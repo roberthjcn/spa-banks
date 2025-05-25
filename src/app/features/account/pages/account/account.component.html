@@ -1,0 +1,13 @@
+<div class="container">
+  <app-delete-modal *ngIf="isModalVisible" [productName]="selectedAccount?.name || ''" (onConfirm)="confirmDelete()"
+    (onCancel)="closeModal()"></app-delete-modal>
+  <div class="search-bar">
+    <input type="text" class="search-input" placeholder="Search..." (input)="onSearch($event)" />
+    <button class="add-button" (click)="addNewAccount()">Agregar</button>
+  </div>
+  <app-account-table [displayedAccounts]="displayedAccounts" [filteredAccounts]="filteredAccounts" [pageSize]="pageSize"
+    [isLoading]="isLoading" (onEdit)="editAccount($event)" (onDelete)="deleteAccount($event)"
+    (onPageSizeChange)="changePageSize($event)">
+  </app-account-table>
+  <app-alert></app-alert>
+</div>

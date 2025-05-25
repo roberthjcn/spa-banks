@@ -1,0 +1,4 @@
+<div class="alert" *ngIf="isVisible" [ngStyle]="{ 'background-color': color }">
+  <div class="alert-message">{{ message }}</div>
+  <button class="close-button" (click)="close()">&times;</button>
+</div>
